@@ -2,7 +2,7 @@
     <span id="nav-title">Performance Monitoring System</span>
     <span>
       <form>
-        <div class="multiselect">
+        <div class="multiselect" (clickOutside)="onClickedOutside($event)">
           <div class="selectBox" (click)="showCheckboxes()">
             <select>
               <option>Select an option</option>
