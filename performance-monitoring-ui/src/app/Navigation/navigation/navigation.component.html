@@ -1,25 +1,99 @@
-<div class="navigation">
-    <span id="nav-title">Performance Monitoring System</span>
-    <span>
-      <form>
-        <div class="multiselect" (clickOutside)="onClickedOutside($event)">
-          <div class="selectBox" (click)="showCheckboxes()">
-            <select>
-              <option>Select an option</option>
-            </select>
-            <div class="overSelect"></div>
-          </div>
-          <div id="checkboxes">
-            <label for="one">
-              <input type="checkbox" id="one" />First checkbox</label>
-            <label for="two">
-              <input type="checkbox" id="two" />Second checkbox</label>
-            <label for="three">
-              <input type="checkbox" id="three" />Third checkbox</label>
-          </div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Performance Monitoring System</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+    <!--   <li>
+        <span>
+          <form>
+            <div class="multiselect" (clickOutside)="onClickedOutside($event)">
+              <div class="selectBox" (click)="showCheckboxes()">
+                <select>
+                  <option>Select an option</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="checkboxes">
+                <label for="one">
+                  <input type="checkbox" id="one" />First checkbox</label>
+                <label for="two">
+                  <input type="checkbox" id="two" />Second checkbox</label>
+                <label for="three">
+                  <input type="checkbox" id="three" />Third checkbox</label>
+              </div>
+            </div>
+          </form>
+        </span>
+      </li> -->
+      <!-- <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+      </div> -->
+
+      <li>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu-hosts" data-toggle="dropdown">
+            Hosts
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let host of hosts" for="one">
+              <input type="checkbox" id="one" />
+              {{host}}
+            </li>
+          </ul>
         </div>
-      </form>
-    </span>
-</div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu-charts" data-toggle="dropdown">
+            Charts
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu-charts">
+            <label for="one">
+              <input type="checkbox" id="one" />
+              First checkbox
+            </label>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu-auto-update" data-toggle="dropdown">
+            Auto-Update
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu-auto-update">
+            <label for="one">
+              <input type="checkbox" id="one" />
+              First checkbox
+            </label>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu-time-range" data-toggle="dropdown">
+            Time-Range
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu-time-range">
+            <label for="one">
+              <input type="checkbox" id="one" />
+              First checkbox
+            </label>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 

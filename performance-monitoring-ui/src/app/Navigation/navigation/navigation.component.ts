@@ -11,27 +11,32 @@ import {
 })
 
 export class NavigationComponent implements OnInit {
-  private expanded = false;
+  // private expanded = false;
 
-showCheckboxes() {
-  const checkboxes = document.getElementById('checkboxes');
-  if (this.expanded === false) {
-      checkboxes.style.display = 'block';
-      this.expanded = true;
-    } else {
-      checkboxes.style.display = 'none';
-      this.expanded = false;
-    }
-}
+  // showCheckboxes() {
+  //   const checkboxes = document.getElementById('checkboxes');
+  //   if (this.expanded === false) {
+  //       checkboxes.style.display = 'block';
+  //       this.expanded = true;
+  //     } else {
+  //       checkboxes.style.display = 'none';
+  //       this.expanded = false;
+  //     }
+  // }
 
-onClickedOutside(event) {
-  console.log('clicked Outside!');
-  const checkboxes = document.getElementById('checkboxes');
-  checkboxes.style.display = 'none';
-}
+  // onClickedOutside(event) {
+  //   console.log('clicked Outside!');
+  //   const checkboxes = document.getElementById('checkboxes');
+  //   checkboxes.style.display = 'none';
+  // }
 
-constructor() { }
+  hosts:string[] = [
+    "Host-Meris",
+    "Host-Bojka",
+    "Host-Vadin"
+  ]
 
-ngOnInit() {
-  }
+  constructor() { }
+
+  ngOnInit() {}
 }
