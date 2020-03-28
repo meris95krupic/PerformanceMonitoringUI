@@ -1,1 +1,20 @@
-<p>hosts works!</p>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Host-Name</th>
+                <th>OS</th>
+                <th>Processor</th>
+                <th>Manufactorer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let host of hosts">
+                <td>{{host.host}}</td>
+                <td>{{host.os}}</td>
+                <td>{{host.processor}}</td>
+                <td>{{host.manufacturer}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

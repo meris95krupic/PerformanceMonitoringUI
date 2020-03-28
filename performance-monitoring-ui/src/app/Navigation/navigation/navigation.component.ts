@@ -3,6 +3,7 @@ import {
   Directive,
   HostBinding,
   HostListener } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-navigation',
@@ -11,6 +12,7 @@ import {
 })
 
 export class NavigationComponent implements OnInit {
+
   // private expanded = false;
 
   // showCheckboxes() {
@@ -30,13 +32,29 @@ export class NavigationComponent implements OnInit {
   //   checkboxes.style.display = 'none';
   // }
 
-  hosts:string[] = [
-    "Host-Meris",
-    "Host-Bojka",
-    "Host-Vadin"
-  ]
+  hosts: any[] = [
+    {
+      name: 'Host-Meris',
+      checked: false
+    },
+    {
+      name: 'Host-Bojka',
+      checked: false
+    },
+    {
+      name: 'Host-Vadin',
+      checked: false
+    }
+  ];
 
-  constructor() { }
+  onChange(i, isChecked: boolean) {
+    this.hosts[i].checked = isChecked;
+    console.log(this.hosts);
+  }
+
+  constructor() {
+
+  }
 
   ngOnInit() {}
 }

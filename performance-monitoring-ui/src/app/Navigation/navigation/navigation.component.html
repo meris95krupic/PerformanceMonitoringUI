@@ -43,9 +43,9 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li *ngFor="let host of hosts" for="one">
-              <input type="checkbox" id="one" />
-              {{host}}
+            <li *ngFor="let host of hosts; let i = index" for="one">
+              <input type="checkbox" id="one" (change)="onChange(i, $event.target.checked)" />
+              {{host.name}}
             </li>
           </ul>
         </div>
@@ -95,5 +95,6 @@
     </ul>
   </div>
 </nav>
+
 
 
