@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  Directive,
-  HostBinding,
-  HostListener } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { APIService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-navigation',
@@ -13,48 +9,36 @@ import { NgForm } from '@angular/forms';
 
 export class NavigationComponent implements OnInit {
 
-  // private expanded = false;
+  hosts: any[] = [{
+    name: 'data.hostName',
+    checked: true
+  }];
 
-  // showCheckboxes() {
-  //   const checkboxes = document.getElementById('checkboxes');
-  //   if (this.expanded === false) {
-  //       checkboxes.style.display = 'block';
-  //       this.expanded = true;
-  //     } else {
-  //       checkboxes.style.display = 'none';
-  //       this.expanded = false;
-  //     }
-  // }
+  constructor(public api: APIService) {
+    
+    console.log('NavigationComponent.constructor');
+  }
 
-  // onClickedOutside(event) {
-  //   console.log('clicked Outside!');
-  //   const checkboxes = document.getElementById('checkboxes');
-  //   checkboxes.style.display = 'none';
-  // }
-
-  hosts: any[] = [
-    {
-      name: 'Host-Meris',
-      checked: false
-    },
-    {
-      name: 'Host-Bojka',
-      checked: false
-    },
-    {
-      name: 'Host-Vadin',
-      checked: false
-    }
-  ];
+  ngOnInit() {
+    console.log('NavigationComponent.ngOnInit');
+    this.test();
+  }
 
   onChange(i, isChecked: boolean) {
     this.hosts[i].checked = isChecked;
     console.log(this.hosts);
   }
 
-  constructor() {
-
+  test(){
+    console.log(this.api.performanceData);
+    this.api.performanceData.map(data => {
+      
+      
+      this.hosts.push({
+        name: data.hostName,
+        checked: true
+      })
+    })
   }
 
-  ngOnInit() {}
 }

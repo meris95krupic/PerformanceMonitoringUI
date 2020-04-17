@@ -9,11 +9,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let host of hosts">
-                <td>{{host.host}}</td>
-                <td>{{host.os}}</td>
-                <td>{{host.processor}}</td>
-                <td>{{host.manufacturer}}</td>
+            <tr *ngFor="let data of api.performanceData">
+                <td>{{data.hostName}}</td>
+                <td>{{data.platform}}</td>
+                <td>{{data.processor}}</td>
+                <td>{{data.manufacturer}}</td>
             </tr>
         </tbody>
     </table>
