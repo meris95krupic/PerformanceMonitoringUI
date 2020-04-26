@@ -8,12 +8,20 @@ import { APIService } from '../../Services/api.service';
 })
 export class HostsComponent implements OnInit {
 
+  performanceData: any[] = [];
+
   constructor(public api: APIService) {
     
   }
 
   ngOnInit(): void {
-    
+    this.getPerformanceData();
+  }
+
+  getPerformanceData(){
+    this.api.getPerformanceData().subscribe((data:any) => {
+      this.performanceData = data
+    })
   }
 
 }

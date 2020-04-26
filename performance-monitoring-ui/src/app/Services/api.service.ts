@@ -8,11 +8,17 @@ export class APIService {
 
   performanceData: any = [];
 
+  apiUrl: string = 'http://localhost:5555/v1/performance';
+  // headers = new HttpHeaders().set('Content-Type', 'application/json');
+
   constructor(private http: HttpClient) {
-    this.http.get('http://localhost:5555/v1/performance').subscribe(data => {
-      this.performanceData = data;
-    });
+    
     console.log('Hi ich bin die API...');
+    
+  }
+
+  getPerformanceData() {
+    return this.http.get(`${this.apiUrl}`);
   }
 
 }

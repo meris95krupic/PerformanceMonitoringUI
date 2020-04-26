@@ -44,7 +44,7 @@
           </button>
           <ul class="dropdown-menu">
             <li *ngFor="let host of hosts; let i = index" for="one">
-              <input type="checkbox" id="one" (change)="onChange(i, $event.target.checked)" />
+              <input [checked]="host.checked" type="checkbox" id="one" (change)="onChangeHost(i, $event.target.checked)" />
               {{host.name}}
             </li>
           </ul>
@@ -57,10 +57,10 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu-charts">
-            <label for="one">
-              <input type="checkbox" id="one" />
-              First checkbox
-            </label>
+            <li *ngFor="let chart of charts; let i = index" for="one">
+              <input [checked]="chart.checked" type="checkbox" id="one" (change)="onChangeChart(i, $event.target.checked)" />
+              {{chart.chart}}
+            </li>
           </ul>
         </div>
       </li>
@@ -71,10 +71,10 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu-auto-update">
-            <label for="one">
-              <input type="checkbox" id="one" />
-              First checkbox
-            </label>
+            <li *ngFor="let time of autoUpdate; let i = index" for="one">
+              <input [checked]="time.checked" type="checkbox" id="one" (change)="onChangeAutoUpdate(i, $event.target.checked)" />
+              {{time.txt}}
+            </li>
           </ul>
         </div>
       </li>
@@ -85,10 +85,10 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu-time-range">
-            <label for="one">
-              <input type="checkbox" id="one" />
-              First checkbox
-            </label>
+            <li *ngFor="let time of timeRange; let i = index" for="one">
+              <input [checked]="time.checked" type="checkbox" id="one" (change)="onChangeTimeRange(i, $event.target.checked)" />
+              {{time.txt}}
+            </li>
           </ul>
         </div>
       </li>
